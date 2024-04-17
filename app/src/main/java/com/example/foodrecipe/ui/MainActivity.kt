@@ -31,9 +31,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModelProvider
-import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
@@ -63,11 +63,10 @@ class MainActivity : ComponentActivity() {
 }
 
 data class HomeScreen(val viewModel: MainViewModel) : Screen {
-
     @Composable
     override fun Content() {
 
-        val state = viewModel.recipes.collectAsState()
+        val state = viewModel.recipesResponse.collectAsState()
         val navigator = LocalNavigator.current
 
         Scaffold(floatingActionButton = {
@@ -80,7 +79,9 @@ data class HomeScreen(val viewModel: MainViewModel) : Screen {
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.padding(it).fillMaxSize()
+                modifier = Modifier
+                    .padding(it)
+                    .fillMaxSize()
             ) {
                 when (state.value) {
                     is UIState.Loading -> {

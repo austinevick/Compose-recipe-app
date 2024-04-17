@@ -1,12 +1,10 @@
 package com.example.foodrecipe.di
 
 import com.example.foodrecipe.constants.Api.Companion.BASE_URL
-import com.example.foodrecipe.data.network.FoodRecipeApi
+import com.example.foodrecipe.repository.FoodRecipeApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.internal.managers.ApplicationComponentManager
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

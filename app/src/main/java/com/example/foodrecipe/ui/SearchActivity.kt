@@ -12,9 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -45,7 +42,7 @@ data class SearchActivity(val viewModel: MainViewModel) : Screen {
         val focusRequester = remember { FocusRequester() }
         val textFieldLoaded = remember { mutableStateOf(false) }
         val searchText by viewModel.searchTerm.collectAsState()
-        val state = viewModel.recipes.collectAsState()
+        val state = viewModel.recipesResponse.collectAsState()
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Spacer(modifier = Modifier.height(20.dp))

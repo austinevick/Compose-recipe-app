@@ -1,7 +1,7 @@
-package com.example.foodrecipe.data
+package com.example.foodrecipe.dataSource
 
 import com.example.foodrecipe.model.FoodRecipeModel
-import com.example.foodrecipe.data.network.FoodRecipeApi
+import com.example.foodrecipe.repository.FoodRecipeApi
 import retrofit2.Response
 import javax.inject.Inject
 

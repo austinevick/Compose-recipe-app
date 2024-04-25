@@ -1,3 +1,3 @@
 # Recipe App
 
-#### A Jetpack Compose app to demonstrate dependency injection and room database
+#### A Jetpack Compose app to demonstrate best practices
